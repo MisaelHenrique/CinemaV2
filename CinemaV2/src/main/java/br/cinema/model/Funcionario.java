@@ -1,11 +1,15 @@
 package br.cinema.model;
 
 import java.util.Date;
+import javax.persistence.Entity;
 
+@Entity
 public class Funcionario extends Pessoa {
+	protected Funcionario() {
+	}
 	//---------------------------------------------------------------------------------------------------------------------------
 	public Funcionario(String cpf, String nome, String endereco, String fone, Date dtNascimento, String email) {
-		super(cpf, nome, endereco, fone, dtNascimento, email);
+		//super(cpf, nome, endereco, fone, dtNascimento, email);
 		// TODO Auto-generated constructor stub
 	}
 	//---------------------------------------------------------------------------------------------------------------------------

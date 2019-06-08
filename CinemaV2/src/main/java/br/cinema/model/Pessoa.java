@@ -1,27 +1,35 @@
 package br.cinema.model;
 
-import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Pessoa {
 
+	@Id
+	@GeneratedValue
 	private int idPessoa;
+	public int getIdPessoa() {
+		return idPessoa;
+	}
+
+	public void setIdPessoa(int idPessoa) {
+		this.idPessoa = idPessoa;
+	}
+
 	private String cpf;
 	private String nome;
 	private String endereco;
 	private String fone;
-	private Date dtNascimento;
+	//private Date dtNascimento;
 	private String email;
 
-	public Pessoa(String cpf, String nome, String endereco, String fone, Date dtNascimento, String email) {
-		super();
-		this.cpf = cpf;
-		this.nome = nome;
-		this.endereco = endereco;
-		this.fone = fone;
-		this.dtNascimento = dtNascimento;
-		this.email = email;
-	}
-
+	
 	// -------------------------------------------------------------------------------------------
 	public String getCpf() {
 		Formatar fmt = new FormatarString();
@@ -68,15 +76,7 @@ public class Pessoa {
 	}
 
 	// -------------------------------------------------------------------------------------------
-	public Date getDtNascimento() {
-		return dtNascimento;
-	}
-
-	// -------------------------------------------------------------------------------------------
-	public void setDtNascimento(Date dtNascimento) {
-		this.dtNascimento = dtNascimento;
-	}
-
+	
 	// -------------------------------------------------------------------------------------------
 	public String getEmail() {
 		return email;

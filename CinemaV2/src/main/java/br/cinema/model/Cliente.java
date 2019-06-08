@@ -1,8 +1,6 @@
 package br.cinema.model;
 
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,10 +10,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_cliente")
-public class Cliente {
+public class Cliente extends Pessoa {
 	
-	@Id
-	private int idCliente;
+	//@Id
+	//private int idCliente;
 	@Column(name = "tipoCliente")
 	private String tipoCliente;// Normal; VIP; Platinum; Ouro;
 	private boolean estudante;
@@ -31,13 +29,13 @@ public class Cliente {
 		return tipoCliente;
 	}
 
-	public int getIdCliente() {
-		return idCliente;
-	}
-
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
-	}
+//	public int getIdCliente() {
+//		return idCliente;
+//	}
+//
+//	public void setIdCliente(int idCliente) {
+//		this.idCliente = idCliente;
+//	}
 
 	// -----------------------------------------------------------------------------
 	public void setTipoCliente(String tipoCliente) {

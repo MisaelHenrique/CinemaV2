@@ -1,30 +1,47 @@
 package br.cinema.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "tab_sessao")
 public class Sessao {
 	
 	
-	
-	private Date data;
-	private Date hora;
+	@Id
+	@GeneratedValue
+	private int idSessao;
+	private LocalDate data;
+	private LocalDate hora;
 	private float valor;
 	private String tipo;
 	
 	//---------------------------------------------------------------------------------------------------------------------------
-	public Date getData() {
-		return data;
+	public int getIdSessao() {
+		return idSessao;
 	}
 	//---------------------------------------------------------------------------------------------------------------------------
-	public void setData(Date data) {
+	public void setIdSessao(int idSessao) {
+		this.idSessao = idSessao;
+	}
+	//---------------------------------------------------------------------------------------------------------------------------
+	public LocalDate getLocalData() {
+		return data;
+	}
+	
+	//---------------------------------------------------------------------------------------------------------------------------
+	public void setLocalData(LocalDate data) {
 		this.data = data;
 	}
 	//---------------------------------------------------------------------------------------------------------------------------
-	public Date getHora() {
+	public LocalDate getHora() {
 		return hora;
 	}
 	//---------------------------------------------------------------------------------------------------------------------------
-	public void setHora(Date hora) {
+	public void setHora(LocalDate hora) {
 		this.hora = hora;
 	}
 	//---------------------------------------------------------------------------------------------------------------------------

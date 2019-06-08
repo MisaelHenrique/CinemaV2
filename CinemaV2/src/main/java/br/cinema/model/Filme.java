@@ -1,9 +1,18 @@
 package br.cinema.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
+
+@Entity
+@Table(name = "tab_filme")
 public class Filme {
 
+	@Id
+	@GeneratedValue
 	private int idFilme;
 	private String titulo;
 	private int duracao;

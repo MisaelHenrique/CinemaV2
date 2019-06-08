@@ -12,16 +12,17 @@ public class Assento {
 	
 	@Id
 	@GeneratedValue
-	private int id_Assento;
+	private int idAssento;
 	private String tipo;
 	private String poltrona;
 	
 	//----------------------------------------------------------------------------------------------------------------------------
 	public int getId_Assento() {
-		return id_Assento;
+		return idAssento;
 	}
-	public void setId_Assento(int id_Assento) {
-		this.id_Assento = id_Assento;
+	//----------------------------------------------------------------------------------------------------------------------------
+	public void setIdAssento(int id_Assento) {
+		this.idAssento = id_Assento;
 	}
 	//---------------------------------------------------------------------------------------------------------------------------
 	public String getTipo() {

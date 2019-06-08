@@ -69,7 +69,7 @@ public class ClienteDAO {
 	
 	public void remover(Cliente cliente){
 		em.getTransaction().begin();
-		Cliente clieRemover = getById(cliente.getIdCliente() );
+		Cliente clieRemover = getById(cliente.getIdPessoa() );
 		em.remove(clieRemover);
 		em.getTransaction().commit();
 		
