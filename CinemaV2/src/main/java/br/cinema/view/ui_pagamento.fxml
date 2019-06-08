@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="272.0" prefWidth="368.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button id="btnFechar" layoutX="209.0" layoutY="159.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Fechar" />
+      <Button layoutX="67.0" layoutY="159.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Gravar" />
+      <TextField id="txtPagamento" layoutX="186.0" layoutY="62.0" />
+      <Label layoutX="50.0" layoutY="66.0" text="Forma de pagamento:" />
+   </children>
+</AnchorPane>

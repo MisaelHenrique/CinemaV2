@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: GRAY;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.cinema.controller.LoginController">
+   <children>
+      <AnchorPane layoutX="278.0" layoutY="50.0" prefHeight="293.0" prefWidth="280.0" style="-fx-background-color: #051937; -fx-background-radius: 30px;" stylesheets="@../css/cinema.css" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="278.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <Button fx:id="btnLogar" layoutX="187.0" layoutY="216.0" mnemonicParsing="false" onAction="#logar" prefHeight="38.0" prefWidth="74.0" styleClass="btn-login" text="Logar" AnchorPane.rightAnchor="19.0" />
+            <JFXTextField fx:id="txtLogin" layoutX="100.0" layoutY="76.0" promptText="Login" />
+            <JFXTextField fx:id="txtPassword" layoutX="100.0" layoutY="138.0" promptText="password" />
+            <FontAwesomeIconView fill="#f5ebeb" glyphName="USER" layoutX="72.0" layoutY="95.0" size="20.0" wrappingWidth="42.0" />
+            <FontAwesomeIconView fill="#f2efef" glyphName="KEY" layoutX="66.0" layoutY="167.0" size="20.0" />
+            <FontAwesomeIconView fill="#f50707" glyphName="CLOSE" layoutX="245.0" layoutY="35.0" onMouseClicked="#close" size="20.0" />
+            <Button layoutX="65.0" layoutY="216.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" styleClass="btn-login" text="Criar Conta" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="8.0" prefHeight="376.0" prefWidth="312.0" style="-fx-background-color: linear-gradient(to right top, #1e18a4, #192bac, #183ab3, #1c48b9, #2455be, #0258b3, #005aa7, #005b99, #004e76, #003f52, #022d32, #111c1b); -fx-background-radius: 30px;" AnchorPane.bottomAnchor="20.0" AnchorPane.topAnchor="20.0" />
+   </children>
+</AnchorPane>

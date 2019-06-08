@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="329.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField id="txtDataSessao" layoutX="129.0" layoutY="43.0" />
+      <Button id="btnFecharSessao" layoutX="218.0" layoutY="223.0" mnemonicParsing="false" text="Fechar" />
+      <Button id="btnSalvarSessao" layoutX="104.0" layoutY="223.0" mnemonicParsing="false" text="Salvar" />
+      <TextField id="txtTipoSessao" layoutX="129.0" layoutY="185.0" />
+      <TextField id="txtValorSessao" layoutX="129.0" layoutY="138.0" />
+      <TextField id="txtHoraSessao" layoutX="129.0" layoutY="93.0" />
+      <Label layoutX="68.0" layoutY="142.0" text="Valor" />
+      <Label layoutX="70.0" layoutY="189.0" text="Tipo" />
+      <Label layoutX="69.0" layoutY="97.0" text="Hora" />
+      <Label layoutX="70.0" layoutY="47.0" text="Data" />
+   </children>
+</AnchorPane>
