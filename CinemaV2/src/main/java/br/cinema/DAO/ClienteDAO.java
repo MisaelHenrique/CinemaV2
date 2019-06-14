@@ -30,6 +30,9 @@ public class ClienteDAO {
 		return em;
 	}
 	
+	//---------------------------------------------------------------------------------------------------------------------------
+
+	
 	public void save(Cliente cliente) {
 		log.info("Salvando cliente");
 		
@@ -45,6 +48,9 @@ public class ClienteDAO {
 			em.close();
 		}
 	}
+	
+	//---------------------------------------------------------------------------------------------------------------------------
+
 	
 	public void atualizar(Cliente cliente) {
 		log.info("Salvando cliente");
@@ -66,6 +72,9 @@ public class ClienteDAO {
 		return em.find(Cliente.class, id);
 		
 	}
+	
+	//---------------------------------------------------------------------------------------------------------------------------
+
 	
 	public void remover(Cliente cliente){
 		em.getTransaction().begin();

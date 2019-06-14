@@ -20,6 +20,8 @@ public class Filme {
 	private String genero;
 	private String sinopse;
 	
+	//-------------------------------------------------------------------------------------------------------------------------
+	
 	public String getSinopse() {
 		return sinopse;
 	}

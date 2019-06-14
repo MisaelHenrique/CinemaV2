@@ -21,7 +21,8 @@ public class Pessoa {
 	public void setIdPessoa(int idPessoa) {
 		this.idPessoa = idPessoa;
 	}
-
+	
+	private String senha;
 	private String cpf;
 	private String nome;
 	private String endereco;
@@ -86,6 +87,18 @@ public class Pessoa {
 	public void setEmail(String email) {
 		// validar email aqui
 		this.email = email;
+	}
+	
+	// -------------------------------------------------------------------------------------------
+
+	public String getSenha() {
+		return senha;
+	}
+	
+	// -------------------------------------------------------------------------------------------
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 }

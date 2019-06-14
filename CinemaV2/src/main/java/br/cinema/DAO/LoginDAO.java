@@ -5,19 +5,18 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import br.cinema.model.Cliente;
+import br.cinema.model.Login;
 
-import br.cinema.model.Filme;
-
-public class FilmeDAO {
+public class LoginDAO {
 	
-	public static Logger log = LogManager.getLogger(FilmeDAO.class);
+	public static Logger log = LogManager.getLogger(LoginDAO.class);
 
 	protected EntityManager em;
-	
-	public FilmeDAO() {
+
+	public LoginDAO() {
 		em = getEntityManager();
 	}
 
@@ -31,18 +30,19 @@ public class FilmeDAO {
 	}
 	
 	//---------------------------------------------------------------------------------------------------------------------------
-	public void save(Filme filme) {
-		log.info("Salvando filme");
+
+	
+	public void save(Login login) {
+		log.info("Salvando login");
 		
 		try {
 			em.getTransaction().begin();
-			em.persist(filme);
+			em.persist(login);
 			em.getTransaction().commit();
 			
 		} catch (Exception e) {
 			// TODO: handle exception
-			em.getTransaction().rollback();
-			log.error("Erro ao salvar o filme" + e.getMessage());
+			log.error("Erro ao salvar o login" + e.getMessage());
 		}finally {
 			em.close();
 		}
@@ -51,43 +51,41 @@ public class FilmeDAO {
 	//---------------------------------------------------------------------------------------------------------------------------
 
 	
-	public void atualizar(Filme filme) {
-		log.info("Salvando filme");
+	public void atualizar(Login login) {
+		log.info("Salvando login");
 		
 		try {
 			em.getTransaction().begin();
-			em.merge(filme);
+			em.merge(login);
 			em.getTransaction().commit();
 			
 		} catch (Exception e) {
 			// TODO: handle exception
-			log.error("Erro ao salvar o filme" + e.getMessage());
-			em.getTransaction().rollback();
-
+			log.error("Erro ao salvar o login" + e.getMessage());
 		}finally {
 			em.close();
 		}
 	}
 	
-	public Filme getById(final int id) {
-		return em.find(Filme.class, id);
+	public Login getById(final int id) {
+		return em.find(Login.class, id);
 		
 	}
 	
 	//---------------------------------------------------------------------------------------------------------------------------
 
 	
-	public void remover(Filme filme){
+	public void remover(Login login){
 		em.getTransaction().begin();
-		Filme filmeRemover = getById(filme.getIdFilme());
-		em.remove(filmeRemover);
+		Login loginRemover = getById(login.getIdLogin());
+		em.remove(loginRemover);
 		em.getTransaction().commit();
 		
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Filme> getAll(){
-		return em.createQuery("FROM" + Filme.class.getName()).getResultList();
+	public List<Login> getAll(){
+		return em.createQuery("FROM" + Cliente.class.getName()).getResultList();
 	}
 
 }

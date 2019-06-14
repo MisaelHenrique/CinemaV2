@@ -1,5 +1,5 @@
 
-package br.cinema.view;
+package br.cinema.controller;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 //classe que conecta os elementos graficos(button, txt, etc) com a aplicaçãojava
-public class Controller {
+public class ControllerIndex {
 
 	@FXML
 	private Button btnFilmeIndex;
