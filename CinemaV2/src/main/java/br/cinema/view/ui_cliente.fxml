@@ -5,8 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.cinema.controller.ClienteController">
    <children>
       <Label layoutX="85.0" layoutY="332.0" text="Tipo de cliente:" />
       <Label layoutX="98.0" layoutY="377.0" text="Estudante:" />
@@ -14,8 +13,8 @@
       <TextField id="txtTipoCliente" fx:id="txtTipoCliente" layoutX="194.0" layoutY="328.0" />
       <TextField id="txtEstudante" fx:id="txtEstudante" layoutX="182.0" layoutY="373.0" />
       <TextField id="txtValidade" fx:id="txtValidade" layoutX="194.0" layoutY="427.0" />
-      <Button layoutX="78.0" layoutY="470.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Salvar" />
-      <Button layoutX="236.0" layoutY="470.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Fechar" />
+      <Button fx:id="bntSalvarCliente" layoutX="78.0" layoutY="470.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Salvar" />
+      <Button fx:id="btnFecharCliente" layoutX="236.0" layoutY="470.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Fechar" />
       <Label layoutX="135.0" layoutY="18.0" text="CPF" />
       <Label layoutX="129.0" layoutY="55.0" text="Nome" />
       <Label layoutX="112.0" layoutY="96.0" text="Endereço" />

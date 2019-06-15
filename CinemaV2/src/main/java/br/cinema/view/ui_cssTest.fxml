@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
@@ -11,11 +12,11 @@
          <children>
             <Button fx:id="btnLogar" layoutX="187.0" layoutY="216.0" mnemonicParsing="false" onAction="#logar" prefHeight="38.0" prefWidth="74.0" styleClass="btn-login" text="Logar" AnchorPane.rightAnchor="19.0" />
             <JFXTextField fx:id="txtLogin" layoutX="100.0" layoutY="76.0" promptText="Login" />
-            <JFXTextField fx:id="txtPassword" layoutX="100.0" layoutY="138.0" promptText="password" />
             <FontAwesomeIconView fill="#f5ebeb" glyphName="USER" layoutX="72.0" layoutY="95.0" size="20.0" wrappingWidth="42.0" />
             <FontAwesomeIconView fill="#f2efef" glyphName="KEY" layoutX="66.0" layoutY="167.0" size="20.0" />
-            <FontAwesomeIconView fill="#f50707" glyphName="CLOSE" layoutX="245.0" layoutY="35.0" onMouseClicked="#close" size="20.0" />
-            <Button layoutX="65.0" layoutY="216.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" styleClass="btn-login" text="Criar Conta" />
+            <FontAwesomeIconView fx:id="btnFecharLogin" fill="#f50707" glyphName="CLOSE" layoutX="245.0" layoutY="35.0" onDragDetected="#close" onMouseClicked="#close" size="20.0" />
+            <Button fx:id="btnCriarConta" layoutX="65.0" layoutY="216.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" styleClass="btn-login" text="Criar Conta" />
+            <JFXPasswordField fx:id="txtPassword" layoutX="100.0" layoutY="148.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="10.0" layoutY="8.0" prefHeight="376.0" prefWidth="312.0" style="-fx-background-color: linear-gradient(to right top, #1e18a4, #192bac, #183ab3, #1c48b9, #2455be, #0258b3, #005aa7, #005b99, #004e76, #003f52, #022d32, #111c1b); -fx-background-radius: 30px;" AnchorPane.bottomAnchor="20.0" AnchorPane.topAnchor="20.0" />
