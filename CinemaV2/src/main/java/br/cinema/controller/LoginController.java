@@ -10,7 +10,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -36,10 +38,12 @@ public class LoginController {
 		System.out.println("logar");
 		String user = txtLogin.getText();
 		String pwd = txtPassword.getText();
-
+		
+		
+		
 		Autenticar aulog = new Autenticar();
 		if (aulog.ValidarLogin(user, pwd)) {
-
+			System.out.println("Direcionar para proxima pagina");
 			final Stage primaryStage = new Stage();
 
 			try {
@@ -52,9 +56,15 @@ public class LoginController {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		} else {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Usuario e senha nao encontrado!");
+			alert.setHeaderText("Erro no Login");
+			alert.setContentText("Usuário ou senha incorretos!");
+			alert.showAndWait();
 		}
 
-		System.out.println("Direcionar para proxima pagina");
+		
 
 	}
 
@@ -70,7 +80,7 @@ public class LoginController {
 		
 		final Stage primaryStage = new Stage();
 		
-		//System.out.println("criar conta");
+		System.out.println("criar conta");
 		
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("../view/ui_cliente.fxml"));

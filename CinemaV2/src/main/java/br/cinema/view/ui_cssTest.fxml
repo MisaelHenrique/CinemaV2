@@ -15,7 +15,7 @@
             <FontAwesomeIconView fill="#f5ebeb" glyphName="USER" layoutX="72.0" layoutY="95.0" size="20.0" wrappingWidth="42.0" />
             <FontAwesomeIconView fill="#f2efef" glyphName="KEY" layoutX="66.0" layoutY="167.0" size="20.0" />
             <FontAwesomeIconView fx:id="btnFecharLogin" fill="#f50707" glyphName="CLOSE" layoutX="245.0" layoutY="35.0" onDragDetected="#close" onMouseClicked="#close" size="20.0" />
-            <Button fx:id="btnCriarConta" layoutX="65.0" layoutY="216.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" styleClass="btn-login" text="Criar Conta" />
+            <Button fx:id="btnCriarConta" layoutX="65.0" layoutY="216.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="102.0" styleClass="btn-login" text="Criar Conta" onAction="#criarConta"/>
             <JFXPasswordField fx:id="txtPassword" layoutX="100.0" layoutY="148.0" />
          </children>
       </AnchorPane>

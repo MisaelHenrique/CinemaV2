@@ -17,10 +17,10 @@ public class Autenticar {
 	public static Logger LOG = LogManager.getLogger(TesteJPA.class.getName());
 	public EntityManager em = null;
 	
-	public void Autenticar() {
+	public Autenticar() {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("LP4");
 
-		LOG.warn("Abrindo Conexão!");
+		LOG.info("Abrindo Conexão!");
 
 		em = factory.createEntityManager();
 
@@ -28,11 +28,11 @@ public class Autenticar {
 	}
 
 	public boolean ValidarLogin(String user, String pwd) {
-		String sql = "FROM cliente c WHERE LIKE c.email = : email and c.senha = :senha";
+		String sql = "FROM Cliente c WHERE c.email = :email and c.senha = :senha";
 		
 		Query qLogin = em.createQuery(sql);
-		qLogin.setParameter(0, user);
-		qLogin.setParameter(1, pwd);
+		qLogin.setParameter("email", user);
+		qLogin.setParameter("senha", pwd);
 		List<Cliente> clienteLogin = qLogin.getResultList();
 		
 		if(clienteLogin.size() > 0) return true;

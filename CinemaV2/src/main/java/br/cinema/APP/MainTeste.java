@@ -19,7 +19,7 @@ public class MainTeste extends Application{
 		try {
 			
 			//root = FXMLLouder
-			root = FXMLLoader.load(getClass().getResource("../view/ui_login.fxml"));
+			root = FXMLLoader.load(getClass().getResource("../view/ui_testecss.fxml"));
 			Scene scene = new Scene(root);
 			// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
