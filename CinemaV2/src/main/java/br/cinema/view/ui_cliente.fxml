@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -13,8 +14,8 @@
       <TextField id="txtTipoCliente" fx:id="txtTipoCliente" layoutX="194.0" layoutY="328.0" />
       <TextField id="txtEstudante" fx:id="txtEstudante" layoutX="182.0" layoutY="373.0" />
       <TextField id="txtValidade" fx:id="txtValidade" layoutX="194.0" layoutY="427.0" />
-      <Button fx:id="bntSalvarCliente" layoutX="78.0" layoutY="470.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Salvar" />
-      <Button fx:id="btnFecharCliente" layoutX="236.0" layoutY="470.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Fechar" />
+      <Button fx:id="bntSalvarCliente" layoutX="78.0" layoutY="470.0" mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="81.0" text="Salvar" />
+      <Button fx:id="btnFecharCliente" layoutX="236.0" layoutY="470.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="81.0" text="Fechar" />
       <Label layoutX="135.0" layoutY="18.0" text="CPF" />
       <Label layoutX="129.0" layoutY="55.0" text="Nome" />
       <Label layoutX="112.0" layoutY="96.0" text="Endereço" />
@@ -26,8 +27,8 @@
       <TextField id="TxtNomeCliente" fx:id="txtNomeCliente" layoutX="180.0" layoutY="51.0" />
       <TextField id="txtEnderecoCliente" fx:id="txtEnderecoCliente" layoutX="182.0" layoutY="92.0" />
       <TextField id="txtFoneCliente" fx:id="txtFoneCliente" layoutX="182.0" layoutY="193.0" />
-      <TextField id="txtDataNascimentoCliente" fx:id="txtDataNascimentoCliente" layoutX="194.0" layoutY="286.0" />
       <TextField id="txtEmailCliente" fx:id="txtEmailCliente" layoutX="194.0" layoutY="246.0" />
       <TextField id="txtCepCliente" fx:id="txtCepCliente" layoutX="174.0" layoutY="141.0" />
+      <JFXDatePicker fx:id="txtDataNascimentoCliente" layoutX="183.0" layoutY="286.0" />
    </children>
 </AnchorPane>

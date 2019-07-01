@@ -68,7 +68,7 @@ public class ControllerIndex {
 	public void loadFXML(String fxml) {
 
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource(fxml));
+			Parent root = FXMLLoader.load(getClass().getResource("/br/cinema/view/" + fxml));
 			Scene scene = new Scene(root);
 			Stage stage = new Stage();
 
@@ -96,5 +96,12 @@ public class ControllerIndex {
 		return true;
 
 	}
+	
+	 @FXML
+	    private void closeIndex() {
+	    	Stage stage = (Stage) btnFecharIndex.getScene().getWindow(); //Obtendo a janela atual
+	        stage.close();//Fechando o Stage
+	    	
+	    }
 
 }

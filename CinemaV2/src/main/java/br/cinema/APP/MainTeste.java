@@ -6,7 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class MainTeste extends Application{
 	
@@ -18,10 +20,11 @@ public class MainTeste extends Application{
 		
 		try {
 			
-			//root = FXMLLouder
-			root = FXMLLoader.load(getClass().getResource("../view/ui_testecss.fxml"));
+			
+			root = FXMLLoader.load(getClass().getResource("../view/ui_cssTest.fxml"));
 			Scene scene = new Scene(root);
-			// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.setFill(Color.TRANSPARENT);
+			primaryStage.initStyle(StageStyle.TRANSPARENT);
 			primaryStage.setScene(scene);
 			primaryStage.show();		
 					

@@ -5,10 +5,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.cinema.controller.FuncionarioController">
    <children>
-      <Button id="btnFecharFuncionario" layoutX="314.0" layoutY="508.0" mnemonicParsing="false" text="Fechar" />
-      <Button id="btnSalvarFuncionario" layoutX="92.0" layoutY="508.0" mnemonicParsing="false" text="Salvar" />
+      <Button id="btnFecharFuncionario" fx:id="btnFecharFuncionario" layoutX="314.0" layoutY="508.0" mnemonicParsing="false" text="Fechar" />
+      <Button id="btnSalvarFuncionario" fx:id="btnSalvarFuncionaro" layoutX="92.0" layoutY="508.0" mnemonicParsing="false" text="Salvar" />
       <TextField id="txtTurno" fx:id="txtTurno" layoutX="188.0" layoutY="470.0" />
       <TextField id="txtDataAdmissao" fx:id="txtDataAdmissao" layoutX="188.0" layoutY="421.0" />
       <TextField id="txtFuncao" fx:id="txtFuncao" layoutX="188.0" layoutY="378.0" />

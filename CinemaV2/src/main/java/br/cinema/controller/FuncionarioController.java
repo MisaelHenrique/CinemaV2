@@ -2,6 +2,7 @@ package br.cinema.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class FuncionarioController {
 	
@@ -45,6 +46,13 @@ public class FuncionarioController {
 
 	    @FXML
 	    private TextField txtCepFuncionaro;
+	    
+	    @FXML
+	    private void closeFunc() {
+	    	Stage stage = (Stage) btnFecharFuncionaro.getScene().getWindow(); //Obtendo a janela atual
+	        stage.close();//Fechando o Stage
+	    	
+	    }
 
 	}
 

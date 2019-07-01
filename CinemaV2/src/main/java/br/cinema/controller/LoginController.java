@@ -32,18 +32,19 @@ public class LoginController {
 
 	@FXML
 	private Button btnCriarConta;
-
+	
+//---------------------------------------------------------------------------------------------------------------------------------------
 	@FXML
 	void logar(ActionEvent event) {
 		System.out.println("logar");
 		String user = txtLogin.getText();
 		String pwd = txtPassword.getText();
 		
-		
+//---------------------------------------------------------------------------------------------------------------------------------------		
 		
 		Autenticar aulog = new Autenticar();
 		if (aulog.ValidarLogin(user, pwd)) {
-			System.out.println("Direcionar para proxima pagina");
+		//	System.out.println("Direcionar para proxima pagina");
 			final Stage primaryStage = new Stage();
 
 			try {
@@ -67,13 +68,16 @@ public class LoginController {
 		
 
 	}
+	
+//-------------------------------------------------------------------------------------------------------------------------------------
 
-	// exibir um janela //Login e Senha estão incorretos
 
 	@FXML
 	void close(MouseEvent event) {
 		System.exit(0);
 	}
+	
+//--------------------------------------------------------------------------------------------------------------------------------------
 
 	@FXML
 	void criarConta(ActionEvent event) {

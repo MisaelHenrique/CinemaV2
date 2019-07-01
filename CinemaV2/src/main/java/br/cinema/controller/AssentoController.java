@@ -18,5 +18,6 @@ public class AssentoController {
 
 	    @FXML
 	    private TextField txtTipoAssento;
-
+	    
+	   
 	}

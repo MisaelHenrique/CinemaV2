@@ -1,6 +1,8 @@
 package br.cinema.model;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -15,7 +17,7 @@ public class Sessao {
 	@GeneratedValue
 	private int idSessao;
 	private LocalDate data;
-	private LocalDate hora;
+	private LocalTime hora;
 	private float valor;
 	private String tipo;
 	
@@ -37,12 +39,12 @@ public class Sessao {
 		this.data = data;
 	}
 	//---------------------------------------------------------------------------------------------------------------------------
-	public LocalDate getHora() {
+	public LocalTime getHora() {
 		return hora;
 	}
 	//---------------------------------------------------------------------------------------------------------------------------
-	public void setHora(LocalDate hora) {
-		this.hora = hora;
+	public void setHora(LocalTime localTime) {
+		this.hora = localTime;
 	}
 	//---------------------------------------------------------------------------------------------------------------------------
 	public float getValor() {

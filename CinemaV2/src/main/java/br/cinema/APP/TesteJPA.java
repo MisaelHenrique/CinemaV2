@@ -27,12 +27,12 @@ public class TesteJPA {
 
 		
 		  Cliente user = new Cliente();
-		  user.setNome("beto" );
-		  user.setCpf("123456789-00"); 
-		  user.setEmail("beto@beto.com.br");
-		  user.setEndereco(" Ruaxxxx"); 
-		  user.setEstudante(false);
-		  user.setSenha("12345");
+		  user.setNome("Misael" );
+		  user.setCpf("006526691-90"); 
+		  user.setEmail("misael@misael.com.br");
+		  user.setEndereco("Rua Francisco Xavier"); 
+		  user.setEstudante(true);
+		  user.setSenha("123456789");
 		  ClienteDAO dao = new ClienteDAO(); //dao.save(user); user.setIdPessoa(1);
 		  
 		  

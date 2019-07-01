@@ -1,11 +1,12 @@
 package br.cinema.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.Table;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
@@ -27,7 +28,7 @@ public class Pessoa {
 	private String nome;
 	private String endereco;
 	private String fone;
-	//private Date dtNascimento;
+	private LocalDate dataNascimento;
 	private String email;
 
 	
@@ -99,6 +100,14 @@ public class Pessoa {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
 }
