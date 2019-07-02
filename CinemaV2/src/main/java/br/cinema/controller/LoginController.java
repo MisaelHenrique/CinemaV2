@@ -48,7 +48,7 @@ public class LoginController {
 			final Stage primaryStage = new Stage();
 
 			try {
-				Parent root = FXMLLoader.load(getClass().getResource("../view/ui_index.fxml"));
+				Parent root = FXMLLoader.load(getClass().getResource("../view/ui_venda.fxml"));
 				Scene scene = new Scene(root);
 				// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				primaryStage.setScene(scene);

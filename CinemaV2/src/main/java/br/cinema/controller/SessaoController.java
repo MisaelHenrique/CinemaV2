@@ -3,7 +3,6 @@ package br.cinema.controller;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTimePicker;
 
-import br.cinema.DAO.ClienteDAO;
 import br.cinema.DAO.SessaoDAO;
 import br.cinema.model.Sessao;
 import javafx.fxml.FXML;
@@ -36,7 +35,7 @@ public class SessaoController {
 		//ConfereCampo();
 		Sessao novaSessao = new Sessao();
 
-		novaSessao.setLocalData(txtDataSessao.getValue());
+		novaSessao.setData(txtDataSessao.getValue());
 		novaSessao.setTipo(txtTipoSessao.getText());
 		novaSessao.setValor(Integer.parseInt(txtValorSessao.getText()));
 		novaSessao.setHora(txtHoraSessao.getValue());

@@ -58,7 +58,7 @@ public class ClienteController {
 		novoCliente.setCpf(txtCpfCliente.getText());
 		novoCliente.setEmail(txtEmailCliente.getText());
 		novoCliente.setFone(txtFoneCliente.getText());
-		novoCliente.setEndereco(txtEnderecoCliente.getText());
+		//novoCliente.setNomeRua(txtNomeRua.getText());
 		novoCliente.setTipoCliente(txtTipoCliente.getText());
 		novoCliente.setDataNascimento(txtDataNascimentoCliente.getValue());
 		// novoCliente.setIdPessoa(Integer.parseInt(txtIdPessoa.getText())); Caso

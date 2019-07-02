@@ -5,3 +5,8 @@
 	-fx-background-radius : 8.0px;
 	
 }
+
+.AnchorPane{
+	-fx-background-img : url("../br.cinema.view.img/fundo azul.jpg");
+}
+	

@@ -4,7 +4,6 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 
@@ -12,8 +11,7 @@ import javax.persistence.Table;
 @Table(name = "tb_cliente")
 public class Cliente extends Pessoa {
 	
-	//@Id
-	//private int idCliente;
+	
 	@Column(name = "tipoCliente")
 	private String tipoCliente;// Normal; VIP; Platinum; Ouro;
 	private boolean estudante;
@@ -28,14 +26,6 @@ public class Cliente extends Pessoa {
 	public String getTipoCliente() {
 		return tipoCliente;
 	}
-
-//	public int getIdCliente() {
-//		return idCliente;
-//	}
-//
-//	public void setIdCliente(int idCliente) {
-//		this.idCliente = idCliente;
-//	}
 
 	// -----------------------------------------------------------------------------
 	public void setTipoCliente(String tipoCliente) {

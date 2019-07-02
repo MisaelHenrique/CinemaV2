@@ -10,28 +10,27 @@ import javax.persistence.InheritanceType;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Pessoa {
+public class Pessoa extends Endereco {
 
 	@Id
 	@GeneratedValue
 	private int idPessoa;
-	public int getIdPessoa() {
-		return idPessoa;
-	}
-
-	public void setIdPessoa(int idPessoa) {
-		this.idPessoa = idPessoa;
-	}
-	
 	private String senha;
 	private String cpf;
 	private String nome;
-	private String endereco;
+	private Endereco endereco;
 	private String fone;
 	private LocalDate dataNascimento;
 	private String email;
-
 	
+	// -------------------------------------------------------------------------------------------
+	public int getIdPessoa() {
+		return idPessoa;
+	}
+	// -------------------------------------------------------------------------------------------
+	public void setIdPessoa(int idPessoa) {
+		this.idPessoa = idPessoa;
+	}	
 	// -------------------------------------------------------------------------------------------
 	public String getCpf() {
 		Formatar fmt = new FormatarString();
@@ -56,17 +55,16 @@ public class Pessoa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 	// -------------------------------------------------------------------------------------------
-	public String getEndereco() {
+
+	public Endereco getEndereco() {
 		return endereco;
 	}
-
 	// -------------------------------------------------------------------------------------------
-	public void setEndereco(String endereco) {
+
+	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-
 	// -------------------------------------------------------------------------------------------
 	public String getFone() {
 		return fone;
