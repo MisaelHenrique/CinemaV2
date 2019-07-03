@@ -2,10 +2,14 @@ package br.cinema.controller;
 
 import javax.swing.JOptionPane;
 
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 
 import br.cinema.DAO.ClienteDAO;
+import br.cinema.model.Cidade;
 import br.cinema.model.Cliente;
+import br.cinema.model.Endereco;
+import br.cinema.model.Estado;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -47,18 +51,42 @@ public class ClienteController {
 	private TextField txtEmailCliente;
 
 	@FXML
-	private TextField txtCepCliente;
+	private TextField txtCep;
+	
+	@FXML
+	private TextField txtNomeRua;
+	
+	@FXML
+	private TextField txtNumero;
+	
+	@FXML
+	private TextField txtBairro;
+	
+	@FXML
+	private JFXComboBox<Cidade> comboCidade;
+
+	@FXML
+	private JFXComboBox<Estado> comboEstado;
+
+
+
+
 
 	@FXML
 	private void salvar() {
 		ConfereCampo();
 		Cliente novoCliente = new Cliente();
+		Endereco novoEndereco = new Endereco();
+		
+		novoEndereco.setNomeRua(txtNomeRua.getText());
+		novoEndereco.setBairro(txtBairro.getText());
+		novoEndereco.setNumero(txtNumero.getText());
+		novoEndereco.setCep(txtCep.getText());
 
 		novoCliente.setNome(txtNomeCliente.getText());
 		novoCliente.setCpf(txtCpfCliente.getText());
 		novoCliente.setEmail(txtEmailCliente.getText());
 		novoCliente.setFone(txtFoneCliente.getText());
-		//novoCliente.setNomeRua(txtNomeRua.getText());
 		novoCliente.setTipoCliente(txtTipoCliente.getText());
 		novoCliente.setDataNascimento(txtDataNascimentoCliente.getValue());
 		// novoCliente.setIdPessoa(Integer.parseInt(txtIdPessoa.getText())); Caso
@@ -108,6 +136,10 @@ public class ClienteController {
 			JOptionPane.showMessageDialog(null, "Informe data de nascimento!!");
 			return;
 		}
+	}
+	
+	private void AtribuiViewToModel() {
+		
 	}
 
 }

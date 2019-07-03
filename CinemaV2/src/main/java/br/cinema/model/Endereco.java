@@ -3,6 +3,7 @@ package br.cinema.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,9 +17,18 @@ public class Endereco {
 	private String numero;
 	private String bairro;
 	private String cep;
-	private String cidade;
-	private String estado;
+	@ManyToOne
+	private Cidade cidade;
 	
+	//--------------------------------------------------------------------------------------------------------------------------------
+	public int getId() {
+		return id;
+	}
+	//--------------------------------------------------------------------------------------------------------------------------------
+	public void setId(int id) {
+		this.id = id;
+	}
+	 	
 	//--------------------------------------------------------------------------------------------------------------------------------
 	public String getNomeRua() {
 		return nomeRua;
@@ -50,22 +60,6 @@ public class Endereco {
 	//--------------------------------------------------------------------------------------------------------------------------------
 	public void setCep(String cep) {
 		this.cep = cep;
-	}
-	//--------------------------------------------------------------------------------------------------------------------------------
-	public String getCidade() {
-		return cidade;
-	}
-	//--------------------------------------------------------------------------------------------------------------------------------
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
-	//--------------------------------------------------------------------------------------------------------------------------------
-	public String getEstado() {
-		return estado;
-	}
-	//--------------------------------------------------------------------------------------------------------------------------------
-	public void setEstado(String estado) {
-		this.estado = estado;
 	}
 	
 

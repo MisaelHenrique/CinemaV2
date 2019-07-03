@@ -7,10 +7,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Pessoa extends Endereco {
+public class Pessoa {
 
 	@Id
 	@GeneratedValue
@@ -18,6 +19,7 @@ public class Pessoa extends Endereco {
 	private String senha;
 	private String cpf;
 	private String nome;
+	@ManyToOne
 	private Endereco endereco;
 	private String fone;
 	private LocalDate dataNascimento;

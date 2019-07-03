@@ -30,16 +30,16 @@ public class ControllerIndex {
 	private Button btnAssentoIndex;
 
 	@FXML
-	private Button btnTicketIndex;
+	private Button btnCadastroCliente;
 
 	@FXML
-	private Button btnPagamentoIndex;
+	private Button btnCadastroFuncionario;
 
 	@FXML
 	public void openWindow(ActionEvent mouseEvent) {
 
-		if (mouseEvent.getSource() == btnCadastroIndex) {
-			loadFXML("ui_cadastro.fxml");
+		if (mouseEvent.getSource() == btnCadastroCliente) {
+			loadFXML("ui_cliente.fxml");
 			// System.out.println("clicou no botão clientes");
 
 		} else if (mouseEvent.getSource() == btnFilmeIndex) {
@@ -54,14 +54,9 @@ public class ControllerIndex {
 			loadFXML("ui_assento.fxml");
 			// System.out.println("clicou no botão filmes");
 
-		} else if (mouseEvent.getSource() == btnTicketIndex) {
-			loadFXML("ui_ticket.fxml");
-			// System.out.println("clicou no botão filmes");
-		
-		}else if (mouseEvent.getSource() == btnPagamentoIndex) {
-			loadFXML("ui_pagamento.fxml");
-			// System.out.println("clicou no botão filmes");
-		}
+		} else if (mouseEvent.getSource() == btnCadastroFuncionario) {
+			loadFXML("ui_funcionario.fxml");
+			}
 
 	}
 
@@ -96,12 +91,12 @@ public class ControllerIndex {
 		return true;
 
 	}
-	
-	 @FXML
-	    private void closeIndex() {
-	    	Stage stage = (Stage) btnFecharIndex.getScene().getWindow(); //Obtendo a janela atual
-	        stage.close();//Fechando o Stage
-	    	
-	    }
+
+	@FXML
+	private void closeIndex() {
+		Stage stage = (Stage) btnFecharIndex.getScene().getWindow(); // Obtendo a janela atual
+		stage.close();// Fechando o Stage
+
+	}
 
 }

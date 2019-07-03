@@ -1,43 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.cinema.controller.VendaController">
    <children>
-      <AnchorPane layoutY="-1.0" prefHeight="437.0" prefWidth="331.0">
+      <AnchorPane layoutY="-1.0" prefHeight="437.0" prefWidth="331.0" stylesheets="@../css/cinema.css">
          <children>
-            <ImageView fx:id="imgFilme" fitHeight="187.0" fitWidth="200.0" layoutX="66.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imgFilme" fitHeight="171.0" fitWidth="200.0" layoutX="66.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
             <Text layoutX="27.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Título:" />
-            <Text layoutX="27.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gênrero:" />
+            <Text layoutX="27.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gênerero:" />
             <Text layoutX="27.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Classificação:" />
             <Text layoutX="27.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duração:" />
             <Text layoutX="28.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sinopse:" />
-            <Label fx:id="lblTitulo" layoutX="66.0" layoutY="230.0" text="Label" />
-            <Label fx:id="lblGenero" layoutX="80.0" layoutY="250.0" text="Label" />
-            <Label fx:id="lblClassificacao" layoutX="108.0" layoutY="276.0" text="Label" />
-            <Label fx:id="lblDuracao" layoutX="82.0" layoutY="298.0" text="Label" />
-            <Label fx:id="lblSinopse" layoutX="82.0" layoutY="321.0" text="Label" />
+            <Label fx:id="lblTitulo" layoutX="66.0" layoutY="230.0" />
+            <Label fx:id="lblGenero" layoutX="80.0" layoutY="250.0" />
+            <Label fx:id="lblClassificacao" layoutX="108.0" layoutY="276.0" />
+            <Label fx:id="lblDuracao" layoutX="82.0" layoutY="298.0" />
+            <Label fx:id="lblSinopse" layoutX="82.0" layoutY="321.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="331.0" prefHeight="437.0" prefWidth="348.0">
          <children>
-            <Text layoutX="27.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filme" />
-            <Text layoutX="30.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Horário" />
-            <Text layoutX="30.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Poltrona" />
-            <JFXRadioButton fx:id="rb3D" layoutX="23.0" layoutY="177.0" text="3D" />
-            <JFXRadioButton fx:id="rb2D" layoutX="99.0" layoutY="177.0" text="2D" />
-            <JFXRadioButton fx:id="rbLegendado" layoutX="19.0" layoutY="230.0" text="Legendado" />
-            <JFXRadioButton fx:id="rbDublado" layoutX="128.0" layoutY="230.0" text="Dubaldo" />
+            <Text layoutX="29.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filme" />
+            <Text layoutX="29.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Horário" />
+            <Text layoutX="29.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Poltrona" />
+            <JFXRadioButton fx:id="rb3D" layoutX="19.0" layoutY="177.0" text="3D">
+               <toggleGroup>
+                  <ToggleGroup fx:id="sessao" />
+               </toggleGroup></JFXRadioButton>
+            <JFXRadioButton fx:id="rb2D" layoutX="130.0" layoutY="177.0" text="2D" toggleGroup="$sessao" />
+            <JFXRadioButton fx:id="rbLegendado" layoutX="19.0" layoutY="230.0" text="Legendado">
+               <toggleGroup>
+                  <ToggleGroup fx:id="legenda" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="rbDublado" layoutX="128.0" layoutY="230.0" text="Dubaldo" toggleGroup="$legenda" />
             <JFXComboBox fx:id="cbFillme" layoutX="78.0" layoutY="41.0" prefHeight="25.0" prefWidth="171.0" />
             <JFXComboBox fx:id="cbHorario" layoutX="78.0" layoutY="82.0" prefHeight="25.0" prefWidth="73.0" />
             <JFXComboBox fx:id="cbPoltrona" layoutX="78.0" layoutY="124.0" prefHeight="25.0" prefWidth="79.0" />
-            <JFXRadioButton fx:id="rbEstudante" layoutX="23.0" layoutY="289.0" text="Estudante" />
+            <JFXRadioButton fx:id="rbEstudante" layoutX="23.0" layoutY="271.0" text="Estudante" />
+            <JFXButton fx:id="btnFinalizar" layoutX="29.0" layoutY="358.0" onAction="#finalizar" styleClass="btn-login" stylesheets="@../css/cinema.css" text="Finalizar" />
+            <JFXButton fx:id="btnSair" layoutX="213.0" layoutY="358.0" onAction="#close" prefHeight="31.0" prefWidth="54.0" styleClass="btn-login" stylesheets="@../css/cinema.css" text="Sair" />
+            <Label fx:id="lblValor" layoutX="26.0" layoutY="322.0" text="Label" />
          </children>
       </AnchorPane>
    </children>

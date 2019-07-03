@@ -5,21 +5,20 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import br.cinema.model.Estado;
-import br.cinema.model.Filme;
+import br.cinema.model.Cliente;
+import br.cinema.model.Endereco;
 
-public class FilmeDAO {
+public class EnderecoDAO {
 	
-	public static Logger log = LogManager.getLogger(FilmeDAO.class);
+	public static Logger log = LogManager.getLogger(ClienteDAO.class);
 
 	protected EntityManager em;
-	
-	public FilmeDAO() {
+
+	public EnderecoDAO() {
 		em = getEntityManager();
 	}
 
@@ -33,18 +32,19 @@ public class FilmeDAO {
 	}
 	
 	//---------------------------------------------------------------------------------------------------------------------------
-	public void save(Filme filme) {
-		log.info("Salvando filme");
+
+	
+	public void save(Endereco endereco) {
+		log.info("Salvando Endereco");
 		
 		try {
 			em.getTransaction().begin();
-			em.persist(filme);
+			em.persist(endereco);
 			em.getTransaction().commit();
 			
 		} catch (Exception e) {
 			// TODO: handle exception
-			em.getTransaction().rollback();
-			log.error("Erro ao salvar o filme" + e.getMessage());
+			log.error("Erro ao salvar o endereco" + e.getMessage());
 		}finally {
 			em.close();
 		}
@@ -53,50 +53,41 @@ public class FilmeDAO {
 	//---------------------------------------------------------------------------------------------------------------------------
 
 	
-	public void atualizar(Filme filme) {
-		log.info("Salvando filme");
+	public void atualizar(Endereco endereco) {
+		log.info("Salvando endereco");
 		
 		try {
 			em.getTransaction().begin();
-			em.merge(filme);
+			em.merge(endereco);
 			em.getTransaction().commit();
 			
 		} catch (Exception e) {
 			// TODO: handle exception
-			log.error("Erro ao salvar o filme" + e.getMessage());
-			em.getTransaction().rollback();
-
+			log.error("Erro ao salvar o endereco" + e.getMessage());
 		}finally {
 			em.close();
 		}
 	}
 	
-	public Filme getById(final int id) {
-		return em.find(Filme.class, id);
+	public Endereco getById(final int id) {
+		return em.find(Endereco.class, id);
 		
 	}
 	
 	//---------------------------------------------------------------------------------------------------------------------------
 
 	
-	public void remover(Filme filme){
+	public void remover(Endereco endereco){
 		em.getTransaction().begin();
-		Filme filmeRemover = getById(filme.getIdFilme());
-		em.remove(filmeRemover);
+		Endereco endRemover = getById(endereco.getId());
+		em.remove(endRemover);
 		em.getTransaction().commit();
 		
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Filme> getAll(){
-		return em.createQuery("FROM" + Filme.class.getName()).getResultList();
-	}
-
-	public Filme getByName(String titulo) {
-		em.getTransaction().begin();
-		TypedQuery<Filme> queryFilme = em.createNamedQuery("Filme.getIdFilme", Filme.class);
-		queryFilme.setParameter("estado", titulo);
-		return queryFilme.getSingleResult();
+	public List<Cliente> getAll(){
+		return em.createQuery("FROM" + Cliente.class.getName()).getResultList();
 	}
 
 }
