@@ -18,7 +18,7 @@ public class Venda {
 	@ManyToOne
 	private Sessao horario;
 	@ManyToOne
-	private String valor;
+	private Sessao valor;
 	@ManyToOne
 	private Assento poltrona;
 
@@ -48,13 +48,13 @@ public class Venda {
 	}
 	// ------------------------------------------------------------------------------------------------------------------------------------
 
-	public String getValor() {
+	public Sessao getValor() {
 		return valor;
 	}
 	// ------------------------------------------------------------------------------------------------------------------------------------
 
-	public void setValor(String string) {
-		this.valor = string;
+	public void setValor(Sessao valor) {
+		this.valor = valor;
 	}
 
 	// ------------------------------------------------------------------------------------------------------------------------------------

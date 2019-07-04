@@ -5,11 +5,14 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import br.cinema.model.Assento;
+import br.cinema.model.Filme;
+import br.cinema.model.Sessao;
 
 public class AssentoDAO {
 	
@@ -78,6 +81,14 @@ public class AssentoDAO {
 	@SuppressWarnings("unchecked")
 	public List<Assento> getAll(){
 		return em.createQuery("FROM" + Assento.class.getName()).getResultList();
+	}
+
+	public Assento getByName(String assentoCombo) {
+		em.getTransaction().begin();
+		TypedQuery<Assento> queryAssento = em.createNamedQuery("Assento.getIdAssento", Assento.class);
+		queryAssento.setParameter("estado", assentoCombo);
+		return queryAssento.getSingleResult();
+		
 	}
 
 }

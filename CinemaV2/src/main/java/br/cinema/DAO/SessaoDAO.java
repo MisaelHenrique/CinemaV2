@@ -5,10 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import br.cinema.model.Estado;
+import br.cinema.model.Filme;
 import br.cinema.model.Sessao;
 
 public class SessaoDAO {
@@ -78,6 +81,14 @@ public class SessaoDAO {
 	@SuppressWarnings("unchecked")
 	public List<Sessao> getAll(){
 		return em.createQuery("FROM" + Sessao.class.getName()).getResultList();
+	}
+
+	public Sessao getByName(String horarioCombo) {
+		em.getTransaction().begin();
+		TypedQuery<Sessao> querySessao = em.createNamedQuery("Sessao.getIdSessao", Sessao.class);
+		querySessao.setParameter("estado", horarioCombo);
+		return querySessao.getSingleResult();
+		
 	}
 
 }

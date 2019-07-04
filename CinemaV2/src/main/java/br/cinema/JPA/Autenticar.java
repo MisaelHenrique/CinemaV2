@@ -1,10 +1,13 @@
 package br.cinema.JPA;
 
 import java.util.List;
+
+import javax.persistence.AssociationOverride;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,7 +17,7 @@ import br.cinema.model.Cliente;
 public class Autenticar {
 	
 	public static Logger LOG = LogManager.getLogger(TesteJPA.class.getName());
-	public EntityManager em = null;
+	protected EntityManager em = null;
 	
 	public Autenticar() {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("LP4");

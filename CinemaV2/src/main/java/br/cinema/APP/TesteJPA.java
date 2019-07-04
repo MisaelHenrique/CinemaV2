@@ -21,6 +21,8 @@ public class TesteJPA {
 		log.warn("Abrindo Conexão!");
 
 		EntityManager emf = factory.createEntityManager();
+		
+		
 
 	}
 

@@ -7,7 +7,9 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 
+import br.cinema.DAO.AssentoDAO;
 import br.cinema.DAO.FilmeDAO;
+import br.cinema.DAO.SessaoDAO;
 import br.cinema.DAO.VendaDAO;
 import br.cinema.model.Assento;
 import br.cinema.model.Filme;
@@ -91,13 +93,23 @@ public class VendaController implements Initializable {
 		
 		FilmeDAO daoTitulo = new FilmeDAO();			
 		String titulo = "" + cbFilme.getValue();	
-		Filme es = daoTitulo.getByName(titulo);
-
-//		novaVenda.setFilme(cbFilme.getValue());
+		Filme tit = daoTitulo.getByName(titulo);
+		novaVenda.setTitulo(cbFilme.getValue());
 		
+		SessaoDAO daoHorario = new SessaoDAO();
+		String horario = "" + cbHorario.getValue();	
+		Sessao ses = daoHorario.getByName(horario);		
 		novaVenda.setHorario(cbHorario.getValue());
+		
+		AssentoDAO daoPoltrona = new AssentoDAO();
+		String poltrona = "" + cbPoltrona.getValue();	
+		Assento pol = daoPoltrona.getByName(poltrona);		
 		novaVenda.setPoltrona(cbPoltrona.getValue());
-		novaVenda.setValor(lblValor.getText());
+		
+		SessaoDAO daoValor = new SessaoDAO();
+		String valor = "" + lblValor.getText();	
+		Assento val = daoPoltrona.getByName(poltrona);	
+		//novaVenda.setValor(lblValor.getText());
 
 		VendaDAO daoVenda = new VendaDAO();
 		daoVenda.save(novaVenda);

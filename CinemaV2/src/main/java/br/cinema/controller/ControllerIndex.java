@@ -55,7 +55,7 @@ public class ControllerIndex {
 			// System.out.println("clicou no botão filmes");
 
 		} else if (mouseEvent.getSource() == btnCadastroFuncionario) {
-			loadFXML("ui_funcionario.fxml");
+			loadFXML("ui_funcionarios.fxml");
 			}
 
 	}

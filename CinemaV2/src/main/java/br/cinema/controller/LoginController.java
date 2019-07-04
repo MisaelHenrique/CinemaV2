@@ -39,16 +39,14 @@ public class LoginController {
 		System.out.println("logar");
 		String user = txtLogin.getText();
 		String pwd = txtPassword.getText();
-		
-//---------------------------------------------------------------------------------------------------------------------------------------		
-		
+				
 		Autenticar aulog = new Autenticar();
 		if (aulog.ValidarLogin(user, pwd)) {
 		//	System.out.println("Direcionar para proxima pagina");
 			final Stage primaryStage = new Stage();
 
 			try {
-				Parent root = FXMLLoader.load(getClass().getResource("../view/ui_venda.fxml"));
+				Parent root = FXMLLoader.load(getClass().getResource("../view/ui_index.fxml"));
 				Scene scene = new Scene(root);
 				// scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				primaryStage.setScene(scene);

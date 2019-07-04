@@ -4,27 +4,27 @@ import javax.swing.JOptionPane;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXRadioButton;
+import com.jfoenix.controls.JFXTextField;
 
+import br.cinema.DAO.CidadeDAO;
 import br.cinema.DAO.ClienteDAO;
+import br.cinema.DAO.EstadoDAO;
 import br.cinema.model.Cidade;
 import br.cinema.model.Cliente;
 import br.cinema.model.Endereco;
 import br.cinema.model.Estado;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 public class ClienteController {
-
-	@FXML
-	private TextField txtTipoCliente;
-
-	@FXML
-	private TextField txtEstudante;
-
-	@FXML
-	private TextField txtValidade;
 
 	@FXML
 	private Button bntSalvarCliente;
@@ -33,62 +33,86 @@ public class ClienteController {
 	private Button btnFecharCliente;
 
 	@FXML
-	private TextField txtCpfCliente;
-
-	@FXML
-	private TextField txtNomeCliente;
-
-	@FXML
-	private TextField txtEnderecoCliente;
-
-	@FXML
-	private TextField txtFoneCliente;
-
-	@FXML
 	private JFXDatePicker txtDataNascimentoCliente;
 
 	@FXML
-	private TextField txtEmailCliente;
+	private JFXTextField txtCpfCliente;
 
 	@FXML
-	private TextField txtCep;
-	
-	@FXML
-	private TextField txtNomeRua;
-	
-	@FXML
-	private TextField txtNumero;
-	
-	@FXML
-	private TextField txtBairro;
-	
-	@FXML
-	private JFXComboBox<Cidade> comboCidade;
+	private JFXTextField txtNomeCliente;
 
 	@FXML
-	private JFXComboBox<Estado> comboEstado;
+	private JFXTextField txtCEP;
 
+	@FXML
+	private JFXTextField txtRuaCliente;
 
+	@FXML
+	private JFXTextField txtNumeroRua;
 
+	@FXML
+	private JFXTextField txtBairro;
 
+	@FXML
+	private JFXComboBox<Estado> cbEstado;
+
+	@FXML
+	private JFXComboBox<Cidade> cbCidade;
+
+	@FXML
+	private JFXTextField txtFoneCliente;
+
+	@FXML
+	private JFXRadioButton rdbEstudante;
+
+	@FXML
+	private ToggleGroup tipoCliente;
+
+	@FXML
+	private JFXTextField txtEmailCliente;
+
+	@FXML
+	private JFXPasswordField txtSenha;
+
+	@FXML
+	private JFXRadioButton rdbPrata;
+
+	@FXML
+	private JFXRadioButton rdbOuro;
+
+	@FXML
+	private JFXRadioButton rdbDiamante;
 
 	@FXML
 	private void salvar() {
-		ConfereCampo();
+		if (!ConfereCampo()) {
+			return;
+		}
 		Cliente novoCliente = new Cliente();
 		Endereco novoEndereco = new Endereco();
-		
-		novoEndereco.setNomeRua(txtNomeRua.getText());
+
+		EstadoDAO daoEstado = new EstadoDAO();
+		String valor = "" + cbEstado.getValue();
+		Estado es = daoEstado.getByName(valor);
+
+		CidadeDAO daoCidade = new CidadeDAO();
+		String valor2 = "" + cbCidade.getValue();
+		Cidade cid = daoCidade.getByName(valor2);
+
+		novoEndereco.setNomeRua(txtRuaCliente.getText());
 		novoEndereco.setBairro(txtBairro.getText());
-		novoEndereco.setNumero(txtNumero.getText());
-		novoEndereco.setCep(txtCep.getText());
+		novoEndereco.setNumero(txtNumeroRua.getText());
+		novoEndereco.setCep(txtCEP.getText());
 
 		novoCliente.setNome(txtNomeCliente.getText());
 		novoCliente.setCpf(txtCpfCliente.getText());
 		novoCliente.setEmail(txtEmailCliente.getText());
 		novoCliente.setFone(txtFoneCliente.getText());
-		novoCliente.setTipoCliente(txtTipoCliente.getText());
 		novoCliente.setDataNascimento(txtDataNascimentoCliente.getValue());
+
+		RadioButton radio = (RadioButton) tipoCliente.getSelectedToggle();
+		novoCliente.setEstudante(radio.getText());
+
 		// novoCliente.setIdPessoa(Integer.parseInt(txtIdPessoa.getText())); Caso
 		// atributo seja Inteiro, usar o parse para converter a String para Int
 
@@ -104,42 +128,105 @@ public class ClienteController {
 
 	}
 
-	private void ConfereCampo() {
+	private void AtribuiViewToModel() {
+
+	}
+
+	@FXML
+	void selecionaEstado(ActionEvent event) {
+		CidadeDAO daoCidade = new CidadeDAO();
+		EstadoDAO daoEstado = new EstadoDAO();
+
+		String valor = "" + cbEstado.getValue();
+		Estado estadoSelecionado = daoEstado.getByName(valor);
+
+		System.out.println(estadoSelecionado.getIdEstado());
+
+		// LOG.info(daoCidade.getCidadesById().size());
+
+		ObservableList<Cidade> cities = FXCollections
+				.observableArrayList(daoCidade.getCidadesById(daoEstado.getById(estadoSelecionado.getIdEstado())));
+
+		cbCidade.setItems(cities);
+
+	}
+
+	void selecionaCidade(ActionEvent event) {
+		CidadeDAO daoCidade = new CidadeDAO();
+		EstadoDAO daoEstado = new EstadoDAO();
+
+		String valor2 = "" + cbCidade.getValue();
+		Cidade cidadeSelecionada = daoCidade.getByName(valor2);
+
+		System.out.println(cidadeSelecionada.getIdCidade());
+
+		ObservableList<Cidade> cities = FXCollections
+				.observableArrayList(daoCidade.getCidadesById(daoEstado.getById(cidadeSelecionada.getIdCidade())));
+
+		cbCidade.setItems(cities);
+
+	}
+
+	private boolean ConfereCampo() {
 		if (txtNomeCliente.getText().trim().isEmpty()) {
-
 			JOptionPane.showMessageDialog(null, "Informe o nome!!");
-
-			return;
+			return false;
 		}
 
 		if (txtCpfCliente.getText().trim().equals("")) {
 			JOptionPane.showMessageDialog(null, "Informe o CPF!!");
-			return;
+			return false;
 		}
-		if (txtEmailCliente.getText().trim().equals("")) {
-			JOptionPane.showMessageDialog(null, "Informe o e-mail!!");
-			return;
+		if (txtDataNascimentoCliente.getValue().getClass().equals("")) {
+			JOptionPane.showMessageDialog(null, "Informe a data de nascimento!!");
+			return false;
 		}
-		if (txtFoneCliente.getText().trim().equals("")) {
-			JOptionPane.showMessageDialog(null, "Informe o telefone!!");
-			return;
+		if (txtRuaCliente.getText().trim().isEmpty()) {
+			JOptionPane.showMessageDialog(null, "Informe o nome da rua!!");
+			return false;
 		}
-		if (txtEnderecoCliente.getText().trim().equals("")) {
-			JOptionPane.showMessageDialog(null, "Informe o endereco: rua/numero/bairro/cidade!!");
-			return;
+		if (txtNumeroRua.getText().trim().equals("")) {
+			JOptionPane.showMessageDialog(null, "Informe o Numero!!");
+			return false;
 		}
-		if (txtTipoCliente.getText().trim().equals("")) {
-			JOptionPane.showMessageDialog(null, "Informe o tipo de cliente!!");
-			return;
+
+		if (txtBairro.getText().trim().equals("")) {
+			JOptionPane.showMessageDialog(null, "Informe o bairro!!");
+			return false;
 		}
-		if (txtDataNascimentoCliente.getValue().equals("")) {
-			JOptionPane.showMessageDialog(null, "Informe data de nascimento!!");
-			return;
+		if (txtCEP.getText().trim().equals("")) {
+			JOptionPane.showMessageDialog(null, "Informe o estado!!");
+			return false;
 		}
+		return true;
 	}
-	
-	private void AtribuiViewToModel() {
+
+	private void AtribuitoModelToView() {// Listar e alterar
+		Cliente novoCliente = new Cliente();
+		Endereco novoEndereco = new Endereco();
+		Estado novoEstado = new Estado();
+		Cidade novaCidade = new Cidade();
+
+		txtNomeCliente.setText(novoCliente.getNome());
+		txtCpfCliente.setText(novoCliente.getCpf());
+		txtDataNascimentoCliente.setValue(novoCliente.getDataNascimento());
+		txtRuaCliente.setText(novoEndereco.getNomeRua());
+		txtNumeroRua.setText(novoEndereco.getNumero());
+		txtBairro.setText(novoEndereco.getBairro());
+		txtCEP.setText(novoEndereco.getCep());
+
+		cbEstado.setStyle(novoEstado.getUfEstado());
+		cbCidade.setStyle(novaCidade.getCidade());
+
+		txtFoneCliente.setText(novoCliente.getFone());
 		
+		rdbEstudante.setStyle(novoCliente.getTipoCliente());
+		rdbOuro.setStyle(novoCliente.getTipoCliente());
+		rdbPrata.setStyle(novoCliente.getTipoCliente());
+		rdbDiamante.setStyle(novoCliente.getTipoCliente());
+		
+		txtEmailCliente.setText(novoCliente.getEmail());
+		txtSenha.setText(novoCliente.getSenha());
 	}
 
 }

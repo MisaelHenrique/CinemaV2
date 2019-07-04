@@ -48,7 +48,7 @@
             <JFXRadioButton fx:id="rbEstudante" layoutX="23.0" layoutY="271.0" text="Estudante" />
             <JFXButton fx:id="btnFinalizar" layoutX="29.0" layoutY="358.0" onAction="#finalizar" styleClass="btn-login" stylesheets="@../css/cinema.css" text="Finalizar" />
             <JFXButton fx:id="btnSair" layoutX="213.0" layoutY="358.0" onAction="#close" prefHeight="31.0" prefWidth="54.0" styleClass="btn-login" stylesheets="@../css/cinema.css" text="Sair" />
-            <Label fx:id="lblValor" layoutX="26.0" layoutY="322.0" text="Label" />
+            <Label fx:id="lblValor" layoutX="26.0" layoutY="322.0" />
          </children>
       </AnchorPane>
    </children>

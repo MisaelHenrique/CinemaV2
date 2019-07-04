@@ -14,7 +14,7 @@ public class Cliente extends Pessoa {
 	
 	@Column(name = "tipoCliente")
 	private String tipoCliente;// Normal; VIP; Platinum; Ouro;
-	private boolean estudante;
+	private String estudante;
 	private LocalDate validade;
 
 	// -----------------------------------------------------------------------------
@@ -33,13 +33,13 @@ public class Cliente extends Pessoa {
 	}
 
 	// -----------------------------------------------------------------------------
-	public boolean isEstudante() {
+	public String isEstudante() {
 		return estudante;
 	}
 
 	// -----------------------------------------------------------------------------
-	public void setEstudante(boolean estudante) {
-		this.estudante = estudante;
+	public void setEstudante(String string) {
+		this.estudante = string;
 	}
 
 	// -----------------------------------------------------------------------------

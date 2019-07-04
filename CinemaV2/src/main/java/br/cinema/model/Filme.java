@@ -15,7 +15,7 @@ public class Filme {
 	@GeneratedValue
 	private int idFilme;
 	private String titulo;
-	private int duracao;
+	private String duracao;
 	private String classificacao;
 	private String genero;
 	private String sinopse;
@@ -39,21 +39,22 @@ public class Filme {
 	//--------------------------------------------------------------------------------------------------------------------------
 	public void setIdFilme(int idFilme) {
 		this.idFilme = idFilme;
-	}
-	
-	//-------------------------------------------------------------------------------------------------------------------------
-	public int getDuracao() {
-		return duracao;
-	}
-	//------------------------------------------------------------------------------------------------------------------------
-	public void setDuracao(int duracao) {
-		this.duracao = duracao;
-	}
+	}	
 	
 	//---------------------------------------------------------------------------------------------------------------------------
 	public String getTitulo() {
 		return titulo;
 	}
+	public String getDuracao() {
+		return duracao;
+	}
+	//-------------------------------------------------------------------------------------------------------------------------
+
+
+	public void setDuracao(String duracao) {
+		this.duracao = duracao;
+	}
+
 	//---------------------------------------------------------------------------------------------------------------------------
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;

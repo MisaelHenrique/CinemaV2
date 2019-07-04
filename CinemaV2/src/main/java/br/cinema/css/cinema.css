@@ -7,6 +7,13 @@
 }
 
 .AnchorPane{
-	-fx-background-image : url("../view/img/fundo_azul.jpg");
+	-fx-background-image : url("../view/img/tron.jpg");
+	-fx-background-size: cover;    
+	
+}
+
+.login{
+	-fx-background-image : url("../view/img/projetorLogin.jpg");
+	-fx-background-size: cover;    	
 }
 	
