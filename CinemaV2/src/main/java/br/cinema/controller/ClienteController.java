@@ -1,7 +1,5 @@
 package br.cinema.controller;
 
-import javax.swing.JOptionPane;
-
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXPasswordField;
@@ -19,6 +17,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
@@ -33,7 +33,8 @@ public class ClienteController {
 	private Button btnFecharCliente;
 
 	@FXML
-	private JFXDatePicker txtDataNascimentoCliente;
+	private JFXDatePicker txtDataNascimentoCliente = new JFXDatePicker();
+
 
 	@FXML
 	private JFXTextField txtCpfCliente;
@@ -169,37 +170,54 @@ public class ClienteController {
 
 	private boolean ConfereCampo() {
 		if (txtNomeCliente.getText().trim().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Informe o nome!!");
+			Alert msg = new
+					Alert(AlertType.ERROR);
+						msg.setContentText("Informe o Nome!!");
+						msg.setHeaderText("Erro na autenticação");
+						msg.show();
 			return false;
 		}
 
 		if (txtCpfCliente.getText().trim().equals("")) {
-			JOptionPane.showMessageDialog(null, "Informe o CPF!!");
+				Alert msg = new
+				Alert(AlertType.ERROR);
+					msg.setContentText("Informe o CPF!!");
+					msg.setHeaderText("Erro na autenticação");
+					msg.show();
 			return false;
-		}
-		if (txtDataNascimentoCliente.getValue().getClass().equals("")) {
-			JOptionPane.showMessageDialog(null, "Informe a data de nascimento!!");
-			return false;
-		}
+	}
+		
 		if (txtRuaCliente.getText().trim().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Informe o nome da rua!!");
-			return false;
+			Alert msg = new
+					Alert(AlertType.ERROR);
+						msg.setContentText("Informe o Nome da rua!!");
+						msg.setHeaderText("Erro na autenticação");
+						msg.show();			return false;
 		}
 		if (txtNumeroRua.getText().trim().equals("")) {
-			JOptionPane.showMessageDialog(null, "Informe o Numero!!");
-			return false;
+			Alert msg = new
+					Alert(AlertType.ERROR);
+						msg.setContentText("Informe o numero!!");
+						msg.setHeaderText("Erro na autenticação");
+						msg.show();			return false;
 		}
 
 		if (txtBairro.getText().trim().equals("")) {
-			JOptionPane.showMessageDialog(null, "Informe o bairro!!");
-			return false;
+			Alert msg = new
+					Alert(AlertType.ERROR);
+						msg.setContentText("Informe o bairro!!");
+						msg.setHeaderText("Erro na autenticação");
+						msg.show();			return false;
 		}
 		if (txtCEP.getText().trim().equals("")) {
-			JOptionPane.showMessageDialog(null, "Informe o estado!!");
-			return false;
+			Alert msg = new
+					Alert(AlertType.ERROR);
+						msg.setContentText("Informe o CEP!!");
+						msg.setHeaderText("Erro na autenticação");
+						msg.show();			return false;
 		}
 		return true;
-	}
+}
 
 	private void AtribuitoModelToView() {// Listar e alterar
 		Cliente novoCliente = new Cliente();

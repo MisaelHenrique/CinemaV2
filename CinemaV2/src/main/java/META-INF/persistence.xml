@@ -17,6 +17,7 @@
 		<class>br.cinema.model.Estado</class>
 		<class>br.cinema.model.Cidade</class>
 		<class>br.cinema.model.Venda</class>
+		<class>br.cinema.model.FormaPagamento</class>
 
 		<properties>
 			<!-- dados da conexao -->

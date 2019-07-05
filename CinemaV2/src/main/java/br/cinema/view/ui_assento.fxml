@@ -7,8 +7,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="289.0" prefWidth="411.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.cinema.controller.AssentoController">
    <children>
-      <Button id="btnFecharAssento" fx:id="btnFecharAssento" layoutX="212.0" layoutY="185.0" mnemonicParsing="false" onAction="#closeAssento" prefHeight="25.0" prefWidth="69.0" text="Fechar" />
-      <Button id="btnSalvarAsssento" fx:id="btnSalvarAssento" layoutX="36.0" layoutY="185.0" mnemonicParsing="false" onAction="#salvarAssento" prefHeight="25.0" prefWidth="69.0" text="Salvar" />
+      <Button id="btnFecharAssento" fx:id="btnFecharAssento" layoutX="212.0" layoutY="185.0" mnemonicParsing="false" onAction="#closeAssento" prefHeight="25.0" prefWidth="69.0" styleClass="btn-login" stylesheets="@../css/cinema.css" text="Fechar" />
+      <Button id="btnSalvarAsssento" fx:id="btnSalvarAssento" layoutX="36.0" layoutY="185.0" mnemonicParsing="false" onAction="#salvarAssento" prefHeight="25.0" prefWidth="69.0" styleClass="btn-login" stylesheets="@../css/cinema.css" text="Salvar" />
       <TextField id="txtPoltrona" fx:id="txtPoltrona" layoutX="137.0" layoutY="94.0" />
       <Label layoutX="36.0" layoutY="106.0" text="Poltrona:" />
       <TextField id="txtTipoAssento" fx:id="txtTipoAssento" layoutX="137.0" layoutY="51.0" />

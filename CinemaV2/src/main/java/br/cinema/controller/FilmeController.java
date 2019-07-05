@@ -1,31 +1,32 @@
 package br.cinema.controller;
 
-import javax.swing.JOptionPane;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
 
 import br.cinema.model.Filme;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class FilmeController {
 
 	@FXML
-	private TextField txtTitulo;
+    private JFXTextField txtTitulo;
 
-	@FXML
-	private TextField txtDuracao;
+    @FXML
+    private JFXTextField txtDuracao;
 
-	@FXML
-	private TextField txtClassificacao;
+    @FXML
+    private JFXTextField txtClassificacao;
 
-	@FXML
-	private TextField txtGenero;
+    @FXML
+    private JFXTextArea txtSinopse;
 
-	@FXML
-	private TextField txtSinopse;
-
+    @FXML
+    private JFXTextField txtGenero;
+    
 	@FXML
 	private Button btnSalvarFilme;
 
@@ -40,7 +41,7 @@ public class FilmeController {
 	}
 	
 	@FXML
-	private void salvar() {
+	private void salvarFilme() {
 		if (!ConfereCampo()) {
 			return;
 		}
@@ -56,25 +57,40 @@ public class FilmeController {
 	
 	private boolean ConfereCampo() {
 		if (txtTitulo.getText().trim().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Informe o titulo!!");
-			return false;
+			Alert msg = new
+					Alert(AlertType.ERROR);
+						msg.setContentText("Informe o titulo!!");
+						msg.setHeaderText("Erro na autenticação");
+						msg.show();			return false;
 		}
 
 		if (txtDuracao.getText().trim().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Informe a duração!!");
-			return false;
+			Alert msg = new
+					Alert(AlertType.ERROR);
+						msg.setContentText("Informe a duração!!");
+						msg.setHeaderText("Erro na autenticação");
+						msg.show();			return false;
 		}
 		if (txtClassificacao.getText().trim().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Informe a classificação!!");
-			return false;
+			Alert msg = new
+					Alert(AlertType.ERROR);
+						msg.setContentText("Informe a classificação!!");
+						msg.setHeaderText("Erro na autenticação");
+						msg.show();			return false;
 		}
 		if (txtGenero.getText().trim().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Informe o genero!!");
-			return false;
+			Alert msg = new
+					Alert(AlertType.ERROR);
+						msg.setContentText("Informe o genero!!");
+						msg.setHeaderText("Erro na autenticação");
+						msg.show();			return false;
 		}
 		if (txtSinopse.getText().trim().isEmpty()) {
-			JOptionPane.showMessageDialog(null, "Informe a sinopse!!");
-			return false;
+			Alert msg = new
+					Alert(AlertType.ERROR);
+						msg.setContentText("Informe a sinopse!!");
+						msg.setHeaderText("Erro na autenticação");
+						msg.show();			return false;
 		}
 
 		return true;

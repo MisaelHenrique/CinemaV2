@@ -45,7 +45,7 @@
             <JFXComboBox fx:id="cbFillme" layoutX="78.0" layoutY="41.0" prefHeight="25.0" prefWidth="171.0" />
             <JFXComboBox fx:id="cbHorario" layoutX="78.0" layoutY="82.0" prefHeight="25.0" prefWidth="73.0" />
             <JFXComboBox fx:id="cbPoltrona" layoutX="78.0" layoutY="124.0" prefHeight="25.0" prefWidth="79.0" />
-            <JFXRadioButton fx:id="rbEstudante" layoutX="23.0" layoutY="271.0" text="Estudante" />
+            <JFXRadioButton fx:id="rbEstudante" layoutX="17.0" layoutY="270.0" text="Estudante" />
             <JFXButton fx:id="btnFinalizar" layoutX="29.0" layoutY="358.0" onAction="#finalizar" styleClass="btn-login" stylesheets="@../css/cinema.css" text="Finalizar" />
             <JFXButton fx:id="btnSair" layoutX="213.0" layoutY="358.0" onAction="#close" prefHeight="31.0" prefWidth="54.0" styleClass="btn-login" stylesheets="@../css/cinema.css" text="Sair" />
             <Label fx:id="lblValor" layoutX="26.0" layoutY="322.0" />

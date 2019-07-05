@@ -21,7 +21,7 @@ public class MainTeste extends Application{
 		try {
 			
 			
-			root = FXMLLoader.load(getClass().getResource("../view/ui_cssTest.fxml"));
+			root = FXMLLoader.load(getClass().getResource("../view/ui_loginCss.fxml"));
 			Scene scene = new Scene(root);
 			scene.setFill(Color.TRANSPARENT);
 			primaryStage.initStyle(StageStyle.TRANSPARENT);
